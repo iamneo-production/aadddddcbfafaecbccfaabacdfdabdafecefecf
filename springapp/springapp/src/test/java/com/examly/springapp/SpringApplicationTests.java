@@ -27,7 +27,7 @@ public class SpringApplicationTests {
 //Checking the title of iamNeo (Home - iamneo)
  public void iamNeo() throws InterruptedException 
  {
-        driver.navigate().to("http://iamneo.ai");
+        driver.navigate().to("https://iamneo.ai");
    String title =driver.getTitle();
    Assert.assertEquals(title, "Learning and assessment solution for Universities and Enterprises");
  }
