@@ -2,6 +2,7 @@ package com.examly.springapp;
 
 import org.testng.annotations.Test;
 import java.net.URL;
+import org.junit.Assert;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
