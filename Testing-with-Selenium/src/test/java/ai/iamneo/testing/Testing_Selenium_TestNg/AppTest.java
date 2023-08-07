@@ -12,7 +12,7 @@ import org.testng.annotations.AfterTest;
 
 public class AppTest {
 
-	ChromeOptions chromeOptions = new ChromeOptions();
+ ChromeOptions chromeOptions = new ChromeOptions();
  WebDriver driver = null;
 
  @BeforeTest
