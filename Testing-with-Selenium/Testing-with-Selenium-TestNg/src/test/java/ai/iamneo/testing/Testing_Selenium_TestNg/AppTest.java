@@ -33,7 +33,7 @@ public class AppTest {
 	{
 		driver.navigate().to("https://www.facebook.com");
 	  String title =driver.getTitle();
-	 Assert.assertEquals(title, "Facebook â€“ log in or sign up");
+	 Assert.assertEquals(title, "Facebook – log in or sign up");
    
 	}
 	@Test
