@@ -11,45 +11,54 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 
 public class AppTest {
-
 	ChromeOptions chromeOptions = new ChromeOptions();
- 	WebDriver driver = null;
-
- @BeforeTest
- public void beforeTest() throws Exception
-  {
-  driver = new RemoteWebDriver(new URL("http://localhost:4444"), chromeOptions);
-     driver.manage().window().maximize();
- }
-
- @Test
- public void iamNeo() throws InterruptedException 
- {
-        
-	// Navigate to iamneo.ai
-	driver.get("http://iamneo.ai");
-
-	// Navigate to Facebook page
-	driver.navigate().to("https://www.facebook.com");
-	
-	// Navigate back to iamneo.ai
-	driver.navigate().back();
-	
-	// Print the URL of the current page
-	System.out.println("Current URL: " + driver.getCurrentUrl());
-	
-	// Navigate forward
-	driver.navigate().forward();
-	
-	// Reload the page
-	driver.navigate().refresh();
-
-}
-
- @AfterTest
- public void afterTest() 
- {
-  driver.quit();
- }
-
-}
+	WebDriver driver = null;
+   
+	@BeforeTest
+	public void beforeTest() throws Exception
+	 {
+	 driver = new RemoteWebDriver(new URL("http://localhost:4444"), chromeOptions);
+		driver.manage().window().maximize();
+	}
+   
+	@Test
+	public void iamNeo() throws InterruptedException 
+	{
+		   driver.navigate().to("http://iamneo.ai");
+	  String title =driver.getTitle();
+	  Assert.assertEquals(title, "Learning and assessment solution for Universities and Enterprises");
+	}
+	@Test
+	public void nextPage() throws InterruptedException 
+	{
+		driver.navigate().to("https://www.facebook.com");
+	  String title =driver.getTitle();
+	 Assert.assertEquals(title, "Facebook â€“ log in or sign up");
+   
+	}
+	@Test
+	public void backPage() throws InterruptedException 
+	{
+	 driver.navigate().back();
+	 String title =driver.getTitle();
+	 Assert.assertEquals(title, "Learning and assessment solution for Universities and Enterprises");
+   
+	}
+	@Test
+	 public void currentURL() throws InterruptedException 
+   {
+	  String title =driver.getCurrentUrl();
+	  System.out.println(title);
+	 Assert.assertEquals(title, "");
+	 driver.navigate().forward();
+	 driver.navigate().refresh();
+   
+   }
+   
+	@AfterTest
+	public void afterTest() 
+	{
+	 driver.quit();
+	}
+   
+   }
