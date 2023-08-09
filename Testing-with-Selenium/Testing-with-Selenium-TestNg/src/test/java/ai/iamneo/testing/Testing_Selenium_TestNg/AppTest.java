@@ -24,9 +24,9 @@ public class AppTest {
 	@Test
 	public void iamNeo() throws InterruptedException 
 	{
-		   driver.navigate().to("http://iamneo.ai");
+		   driver.navigate().to("https://iamneo.ai");
 	  String title =driver.getTitle();
-	  Assert.assertEquals(title, "Learning and assessment solution for Universities and Enterprises");
+	  Assert.assertEquals(title, "Home - iamneo");
 	}
 	@Test
 	public void nextPage() throws InterruptedException 
@@ -41,7 +41,7 @@ public class AppTest {
 	{
 	 driver.navigate().back();
 	 String title =driver.getTitle();
-	 Assert.assertEquals(title, "Learning and assessment solution for Universities and Enterprises");
+	 Assert.assertEquals(title, "Home - iamneo");
    
 	}
 	@Test
